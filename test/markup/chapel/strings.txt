@@ -1,0 +1,16 @@
+writeln("String");
+writeln('String');
+writeln(b"Bytes");
+writeln(b"bytes");
+writeln("""multi-
+        line
+        string""");
+writeln('''multi-
+        line
+        string''');
+writeln(b"""multi-
+        line
+        bytes""");
+writeln(b'''multi-
+        line
+        bytes''');
