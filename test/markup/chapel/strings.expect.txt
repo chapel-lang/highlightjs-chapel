@@ -1,0 +1,16 @@
+<span class="hljs-built_in">writeln</span>(<span class="hljs-string">&quot;String&quot;</span>);
+<span class="hljs-built_in">writeln</span>(<span class="hljs-string">&#x27;String&#x27;</span>);
+<span class="hljs-built_in">writeln</span>(<span class="hljs-string">b&quot;Bytes&quot;</span>);
+<span class="hljs-built_in">writeln</span>(<span class="hljs-string">b&quot;bytes&quot;</span>);
+<span class="hljs-built_in">writeln</span>(<span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;multi-
+        line
+        string&quot;</span><span class="hljs-string">&quot;&quot;</span>);
+<span class="hljs-built_in">writeln</span>(<span class="hljs-string">&#x27;&#x27;</span><span class="hljs-string">&#x27;multi-
+        line
+        string&#x27;</span><span class="hljs-string">&#x27;&#x27;</span>);
+<span class="hljs-built_in">writeln</span>(<span class="hljs-string">b&quot;&quot;</span><span class="hljs-string">&quot;multi-
+        line
+        bytes&quot;</span><span class="hljs-string">&quot;&quot;</span>);
+<span class="hljs-built_in">writeln</span>(<span class="hljs-string">b&#x27;&#x27;</span><span class="hljs-string">&#x27;multi-
+        line
+        bytes&#x27;</span><span class="hljs-string">&#x27;&#x27;</span>);

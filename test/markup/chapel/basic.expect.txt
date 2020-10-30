@@ -1,0 +1,10 @@
+<span class="hljs-comment">/* This is a Chapel test file <span class="hljs-comment">/* that uses a nested comment */</span> and
+   prints a message from each core of a laptop, cluster, or supercomputer.
+*/</span>
+<span class="hljs-keyword">coforall</span> loc <span class="hljs-keyword">in</span> <span class="hljs-built_in">Locales</span>	{
+  <span class="hljs-keyword">on</span> loc {
+    <span class="hljs-keyword">const</span> nTasks = <span class="hljs-built_in">here</span>.numPUs();
+    <span class="hljs-keyword">forall</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span>..&lt;nTasks <span class="hljs-keyword">do</span>
+      <span class="hljs-built_in">writeln</span>(<span class="hljs-string">&quot;Hello from task &quot;</span>, i, <span class="hljs-string">&quot; of &quot;</span>, nTasks, <span class="hljs-string">&quot; on locale &quot;</span>, loc.name);
+  }
+}

@@ -1,0 +1,10 @@
+/* This is a Chapel test file /* that uses a nested comment */ and
+   prints a message from each core of a laptop, cluster, or supercomputer.
+*/
+coforall loc in Locales	{
+  on loc {
+    const nTasks = here.numPUs();
+    forall i in 0..<nTasks do
+      writeln("Hello from task ", i, " of ", nTasks, " on locale ", loc.name);
+  }
+}
