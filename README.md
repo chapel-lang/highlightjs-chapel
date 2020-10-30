@@ -8,6 +8,9 @@ Instructions for Dummies (namely me)
 This is a third-party highlight.js package, which means that it won't
 be included in every distribution of highlight.js by default, but
 that, depending on the context, people may be able to opt in to it.
+I've taken the approach of getting something simple up and running
+quickly to get the basics working, but more time could be invested
+here to improve it over time.
 
 
 Getting started for the first time
@@ -115,11 +118,22 @@ To modify the Chapel grammar and test it
 
 TODO list
 ---------
+* easy: What other "built-ins" would we want to call out?  (e.g.,
+  `Locales`, `here`, `writeln`)
+
 * I suspect our string forms could be beefed up to better handle
   escaped characters and the like
 
 * I think our numerical forms are missing some forms like binary,
-  octal, and maybe hex(?) including
+  octal, and maybe hex(?) including hex floating point forms?
+
+* Other languages do more to call out constructs that create new
+  scoped concepts like 'class', 'enum', 'proc', 'iter', etc.
+  Should we?
+
+* Generally speaking, our grammar is much simpler than most other
+  languages, making me think it's not as bulletproof.  What more
+  should we worry about for generality?
 
 
 Other links that may be useful
