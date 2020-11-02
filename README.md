@@ -116,8 +116,69 @@ To modify the Chapel grammar and test it
    ```
 
 
-TODO list
----------
+To integrate the Chapel grammar into a Discourse Theme
+------------------------------------------------------
+
+1) Build the CDN version of highlight.js:
+
+   ```
+   node tools/build.js -t cdn
+   ```
+
+2) Take a look at chapel.min.js:
+
+   ```
+   emacs -nw extra/highlightjs-chapel/dist/chapel.min.js
+   ```
+
+3) Make a copy of the script and edit out the initial
+   registerLanguage() call and closing braces/parens, also removing
+   linefeeds, to get a single-line version of the script for pasting
+   into the next step.
+
+4) On the Discourse admin panel:
+
+   - click to "Customize -> Themes"
+
+   - select a theme to edit (syntax highlighting is specific to a
+     theme and will need to be added to each theme that you want to
+     support)
+
+   - Under "Custom CSS/HTML" choose "Edit CSS/HTML"
+
+   - Go to the "</head>" section
+
+   - Paste in / update the following script:
+
+     ```
+     <script type="text/discourse-plugin" version="0.8.27">
+       // add Chapel language to HighlightJS
+       // Must build highlight.js with "node tools/build.js -t cdn"
+       const chapelLang = TODO: PASTE_FUNCTION_HERE!!!
+       api.registerHighlightJSLanguage("chapel", chapelLang);
+     </script>
+     ```
+
+     where the function should have the form:
+
+     ```
+     function(e){return{name:"Chapel",aliases:["chapel","chpl"],...}}
+     ```
+
+5) Under Settings->Posting, add "chapel" to the "highlighted
+   languages" section.  Optionally, consider also making "Chapel" the
+   default code language.
+
+6) Open questions:
+   - Does the registerHighlightJSLanguage() line need to be repeated
+     for each triple-quote tag we want to recognize?
+   - Does each string passed to registerHighlightJSLanguage() need to be
+     named distinctly in the "highlighted languages" section, or is it
+     cognizant of the aliases in the language's definition.
+
+
+TODO list for improving the grammar
+-----------------------------------
 * easy: What other "built-ins" would we want to call out?  (e.g.,
   `Locales`, `here`, `writeln`)
 
@@ -155,7 +216,7 @@ Highlight.js resources:
 
 Integration into Discourse resources:
 
-* Most likely path to success:
+* The path I took to success (summarized above):
   https://meta.discourse.org/t/hack-to-install-a-new-language-for-highlight-js-on-a-hosted-discourse/55818/7
 
 * Another potential possibility:
