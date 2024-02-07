@@ -2,8 +2,8 @@ This repo provides third-party highlight.js support for the Chapel
 language (https://chapel-lang.org).
 
 
-Instructions for Dummies (namely me)
-====================================
+Notes/Reminders to myself and potentially others
+================================================
 
 This is a third-party highlight.js package, which means that it won't
 be included in every distribution of highlight.js by default, but
@@ -146,7 +146,14 @@ To integrate the Chapel grammar into a Discourse Theme
 
    - Under "Custom CSS/HTML" choose "Edit CSS/HTML"
 
-   - Go to the "</head>" section
+   - Go to the "Head" section
+
+   NOTE: Last time I did this (Feb 6, 2024) the new script format
+     didn't match the old as closely as I was expecting and I got
+     nervous about potential highlight.js version mismatches, so I
+     just copied the keywords section of the script into the old
+     script to minimize differences.  A little hacky, but it seemed to
+     work.
 
    - Paste in / update the following script:
 
